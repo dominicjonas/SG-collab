@@ -8,6 +8,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #eee;
+  min-height: 100vh;
 }
 
 // NAV
@@ -16,17 +17,17 @@ nav {
   display: grid;
   grid-template-columns: 2fr 5fr 2fr;
   align-items: center;
-  margin: 0 2em;
-  padding: 1em;
+  padding: 1em 0;
   .search-field h2 {
+    margin-left: 2em;
     font-weight: 200;
     color: crimson;
-    border-bottom: crimson 1px solid;
+    // border-bottom: crimson 1px solid;
     box-shadow: 0 3px 2px -2px;
     transition: 0.3s box-shadow;
-    &:hover {
-      box-shadow: crimson 0 10px 10px -10px;
-    }
+    // &:hover {
+    //   box-shadow: crimson 0 5px 5px -5px;
+    // }
   }
   .nav-title {
     span {
@@ -41,34 +42,36 @@ nav {
   }
   .auth-btns {
     display: flex;
+    justify-content: space-evenly;
     .login-btn {
-      margin: 0 0.5em;
       padding: 0.5em 2em;
       font-size: 1em;
       color: #008080;
       border: none;
       border-radius: 5px;
       text-transform: uppercase;
+      cursor: pointer;
       transition: 0.3s box-shadow;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       &:hover {
-        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        box-shadow: rgb(29, 167, 121) 0px 20px 30px -10px;
       }
     }
     .register-btn {
-      margin: 0 0.5em;
       padding: 0.5em 2em;
+      margin-left: 0.5em;
       font-size: 1em;
       color: #d03131;
       border: none;
       border-radius: 5px;
       text-transform: uppercase;
+      cursor: pointer;
       transition: 0.3s box-shadow;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       &:hover {
-        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        box-shadow: rgb(182, 58, 58) 0px 20px 30px -10px;
       }
     }
   }
@@ -76,10 +79,11 @@ nav {
 
 .nav-container {
   background: #edde53;
-  padding: 0.8em;
+  padding: 0.8em 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
   .nav-link {
     color: rgb(78, 78, 78);
     padding: 0.5em 3em;
@@ -94,43 +98,103 @@ nav {
     rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
-.btn {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ed3330;
-  padding: 20px;
-  border-radius: 5px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
-  &:hover {
-    background: #434343;
-    letter-spacing: 1px;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
-    transition: all 0.4s ease 0s;
-  }
+// HERO
+
+.hero-section {
+  min-height: 70vh;
+  display: grid;
+  place-content: center;
 }
 
-// HOME
+.hero-carousel-container {
+  border: 5px solid gold;
+  padding: 10em;
+  width: 100vw;
+  text-align: center;
+}
 
-// BRANDS / BRAND CARDS
+// BRANDS
+
+.brand-cards-container {
+  place-content: center;
+  display: grid;
+  margin-top: 3em;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, 250px);
+  height: 100%;
+}
+
+// / BRAND CARDS
 
 img {
   width: 200px;
   height: 100px;
 }
 
-.brand-cards-container {
-  place-items: center;
-  display: grid;
-  margin-top: 3em;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fill, 250px);
+.card {
+  background: rgb(138, 146, 207);
+  padding: 8rem 0 0;
+  max-width: 35ch;
+  color: rgb(5, 32, 37);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: linear-gradient(
+    rgb(223, 223, 230),
+    rgb(231, 231, 236) 20%,
+    rgb(153, 173, 172)
+  );
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-// .brand-card-container {
-//   border 1px
-// }
+.card-content {
+  padding: 1.5rem;
+  .card-title {
+    font-size: 1.5em;
+    font-weight: 300;
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+  }
+  .card-body {
+    font-weight: 200;
+    margin: 0.5em 0;
+  }
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  left: calc(1.5rem * -1);
+  bottom: 0;
+  height: 2px;
+  width: calc(100% + 1.5rem);
+  background: rgb(10, 115, 122);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card-btn {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 100;
+  border: 1px solid rgb(17, 131, 131);
+  border-radius: 0.3em;
+  color: rgb(18, 87, 87);
+  background: transparent;
+  padding: 0.5em 1.25em;
+  transition: 0.3s background ease;
+  &:hover {
+    background: rgb(16, 119, 119);
+    color: #eee;
+  }
+}

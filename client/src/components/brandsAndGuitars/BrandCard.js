@@ -1,19 +1,16 @@
 import React from 'react'
 
-const BrandCard = ({ _id, brand, placeOfOrigin, brandLogoUrl }) => {
+const BrandCard = ({ _id, brand, brandLogoUrl }) => {
   return (
-    <div className='brand-card-container' id={_id}>
-      <div className='brand-card-header'>
-        <h4>{brand}</h4>
-      </div>
-      <div className='brand-card-img'>
+    <div className='card' id={_id}>
+      <div className='card-content'>
         <img src={brandLogoUrl} />
-      </div>
-      <div className='brand-card-origin'>
-        <h4>{placeOfOrigin}</h4>
-      </div>
-      <div className='brand-bio'>
-        <p>some text about the brand</p>
+        <h4 className='card-title'>{brand}</h4>
+        <p className='card-body'>
+          some text about the brand, some other things about the brand, and
+          some more..
+        </p>
+        <button className='card-btn'>Learn more</button>
       </div>
     </div>
   )
