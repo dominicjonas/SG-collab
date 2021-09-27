@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from '../common/Navbar.js'
 import { getAllBrands } from '../api/callerFunctions.js'
 import BrandCard from './BrandCard.js'
 
@@ -22,7 +20,6 @@ const Brands = () => {
           <BrandCard
             key={brand._id}
             brand={brand.brand}
-            placeOfOrigin={brand.placeOfOrigin}
             brandLogoUrl={brand.brandLogoUrl}
           />
         ))}
