@@ -239,4 +239,12 @@ img {
   background: #107777;
   color: #eee;
 }
+
+footer {
+  text-align: center;
+  background: #d6d6d6;
+  padding: 3em;
+  border-top: 1px solid #888888;
+  margin-top: 2em;
+}
 /*# sourceMappingURL=main.css.map */
