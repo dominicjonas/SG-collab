@@ -7,8 +7,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #eee;
+  background: linear-gradient(#eee, rgb(170, 170, 170));
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 // NAV
@@ -87,7 +88,7 @@ nav {
   .nav-link {
     color: rgb(78, 78, 78);
     padding: 0.5em 3em;
-    font-weight: 300;
+    font-weight: 400;
   }
   .middle-link {
     border-left: 1px solid rgba(255, 255, 255, 0.7);
@@ -134,7 +135,7 @@ img {
 .card {
   background: rgb(138, 146, 207);
   padding: 8rem 0 0;
-  max-width: 35ch;
+  max-width: 40ch;
   color: rgb(5, 32, 37);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -143,9 +144,12 @@ img {
     rgb(231, 231, 236) 20%,
     rgb(153, 173, 172)
   );
-  transition: transform 0.5s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 1px 3px 5px -2px,
+    rgba(0, 0, 0, 0.3) 1px 1px 3px -1px;
+  transition: box-shadow 0.5s ease;
   &:hover {
-    transform: scale(1.05);
+    // transform: scale(1.05);
+    box-shadow: rgb(47, 49, 48) 0px 20px 30px -10px;
   }
 }
 
@@ -187,14 +191,26 @@ img {
   text-decoration: none;
   font-size: 1em;
   font-weight: 100;
-  border: 1px solid rgb(17, 131, 131);
   border-radius: 0.3em;
-  color: rgb(18, 87, 87);
   background: transparent;
-  padding: 0.5em 1.25em;
+  padding: 0.5em 0.5em;
   transition: 0.3s background ease;
+  margin: 0.3em;
+}
+.info {
+  border: 1px solid rgb(17, 131, 131);
+  color: rgb(18, 87, 87);
   &:hover {
     background: rgb(16, 119, 119);
+    color: #eee;
+    border: none;
+  }
+}
+.guitars {
+  border: 1px solid rgb(144, 49, 221);
+  color: rgb(134, 27, 221);
+  &:hover {
+    background: rgb(134, 27, 221);
     color: #eee;
   }
 }

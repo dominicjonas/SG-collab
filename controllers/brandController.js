@@ -65,9 +65,7 @@ async function updateBrand(req, res, next) {
   try {
     const { id } = req.params
     const { body } = req
-    // const recipe = await Recipe.findByIdAndUpdate(id, req.body, {
-    //   new: true
-    // })
+
     const brand = await Brand.findById(id)
 
     if (!brand) {

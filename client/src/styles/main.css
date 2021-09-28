@@ -8,8 +8,10 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#aaaaaa));
+  background: linear-gradient(#eee, #aaaaaa);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 nav {
@@ -120,7 +122,7 @@ nav .auth-btns .register-btn:hover {
 .nav-container .nav-link {
   color: #4e4e4e;
   padding: 0.5em 3em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .nav-container .middle-link {
@@ -161,21 +163,23 @@ img {
 .card {
   background: #8a92cf;
   padding: 8rem 0 0;
-  max-width: 35ch;
+  max-width: 40ch;
   color: #052025;
   border-radius: 0.5rem;
   overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, from(#dfdfe6), color-stop(20%, #e7e7ec), to(#99adac));
   background: linear-gradient(#dfdfe6, #e7e7ec 20%, #99adac);
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 1px 3px 5px -2px, rgba(0, 0, 0, 0.3) 1px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 1px 3px 5px -2px, rgba(0, 0, 0, 0.3) 1px 1px 3px -1px;
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
 }
 
 .card:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-box-shadow: #2f3130 0px 20px 30px -10px;
+          box-shadow: #2f3130 0px 20px 30px -10px;
 }
 
 .card-content {
@@ -226,17 +230,32 @@ img {
   text-decoration: none;
   font-size: 1em;
   font-weight: 100;
-  border: 1px solid #118383;
   border-radius: 0.3em;
-  color: #125757;
   background: transparent;
-  padding: 0.5em 1.25em;
+  padding: 0.5em 0.5em;
   -webkit-transition: 0.3s background ease;
   transition: 0.3s background ease;
+  margin: 0.3em;
 }
 
-.card-btn:hover {
+.info {
+  border: 1px solid #118383;
+  color: #125757;
+}
+
+.info:hover {
   background: #107777;
+  color: #eee;
+  border: none;
+}
+
+.guitars {
+  border: 1px solid #9031dd;
+  color: #861bdd;
+}
+
+.guitars:hover {
+  background: #861bdd;
   color: #eee;
 }
 
