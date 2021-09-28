@@ -10,7 +10,8 @@ const BrandCard = ({ _id, brand, brandLogoUrl }) => {
           some text about the brand, some other things about the brand, and
           some more..
         </p>
-        <button className='card-btn'>Learn more</button>
+        <button className='card-btn info'>Learn more</button>
+        <button className='card-btn guitars'>Guitars</button>
       </div>
     </div>
   )
